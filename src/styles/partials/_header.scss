@@ -132,6 +132,14 @@
   }
 }
 @media all and(max-width: 992px) {
+  .header {
+    .logo__description {
+      display: none;
+    }
+    .logo__link {
+      width: 135px;
+    }
+  }
   .header__container {
     padding-right: 0;
     border-bottom: 1px solid #e8eff6;
@@ -188,12 +196,6 @@
     align-items: center;
     margin: 0;
     border-left: 1px solid #e8eff6;
-  }
-  .logo__description {
-    display: none;
-  }
-  .logo__link {
-    width: 135px;
   }
   .header__content {
     padding: 0;

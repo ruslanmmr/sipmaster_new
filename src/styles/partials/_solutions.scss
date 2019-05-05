@@ -1,0 +1,23 @@
+.solutions {
+  background-color: #e6e6e6;
+  .banner-slide__container {
+    padding: 85px 0;
+  }
+  &__background {
+    position: absolute;
+    width: calc(100% + 140px);
+    height: 105%;
+    right: -140px;
+    bottom: 0;
+    background-size: auto 100%;
+    background-position: bottom right;
+    background-repeat: no-repeat;
+  }
+}
+
+@media all and(max-width: 576px) {
+  .solutions__background {
+    opacity: 0.4;
+    background-position: bottom center;
+  }
+}

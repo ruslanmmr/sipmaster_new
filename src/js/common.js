@@ -1,11 +1,10 @@
 $(document).ready(function () {
   lazy();
   autoBlockHeight();
-  checkboxes();
-  cover();
+  reviews();
   nav();
   home();
-  $(".input_phone").mask("+7 (999) 999-99-99");
+  $(".input_phone").mask("(999) 999-99-99");
 });
 $(window).resize(function () {
   innerWidth = $('body').innerWidth();
@@ -14,32 +13,6 @@ $(window).resize(function () {
 //global variables
 var innerWidth = $('body').innerWidth();
 
-//image-cover-box
-function cover() {
-  $('.cover-box').each(function() {
-    //set size
-    var th = $(this).height(),//box height
-        tw = $(this).width(),//box width
-        im = $(this).children('img'),//image
-        ih = im.height(),
-        iw = im.width();
-    if ((tw/th) >= (iw/ih)) {
-        im.addClass('ww').removeClass('wh');
-    } else {
-        im.addClass('wh').removeClass('ww');
-    }
-  });
-}
-//checkboxes
-function checkboxes() {
-  $('.checkbox__label').on('click', function() {
-    if ($(this).find('input').is(':checked')) {
-      $(this).addClass('checkbox__label_checked');
-    } else {
-      $(this).removeClass('checkbox__label_checked');
-    }
-  })
-}
 //nav
 function nav() {
   var $navButton = $('.nav-open'),
@@ -84,38 +57,53 @@ function nav() {
 function lazy() {
   $(".lazy").Lazy({
     visibleOnly: false,
-    //threshold: '500',
+    threshold: '500',
     effect: 'fadeIn',
-    effectTime: '300',
-    afterLoad: function() {
-      cover();
-    }
+    effectTime: '300'
   });
 }
 //blocks
 function autoBlockHeight() {
-  resize();
-  $(window).resize(function () {
+  var $block = $(".opportunities-block__container"),
+        $block1 = $(".opportunities-block__container_1"),
+        $block2 = $(".opportunities-block__container_2");
+
+  if(innerWidth > 576) {
     resize();
+  }
+  $(window).resize(function () {
+    if(innerWidth > 576) {
+      resize();
+    } else {
+      $block.css('height', 'auto')
+    }
   });
 
   function resize() {
-    var mh = 0,
-    $block = $(".project-block__container");
-
     $block.css('height', 'auto');
-    $block.each(function () {
+    var mh1 = 0,
+        mh2 = 0;
+
+    $block1.each(function () {
       var h_block = parseInt($(this).height());
-      if(h_block > mh) {
-        mh = h_block;
+      if(h_block > mh1) {
+        mh1 = h_block;
       };
     });
-    $block.height(mh);
+    $block1.height(mh1);
+
+    $block2.each(function () {
+      var h_block = parseInt($(this).height());
+      if(h_block > mh2) {
+        mh2 = h_block;
+      };
+    });
+    $block2.height(mh2);
   }
 }
 //clients
 function home() {
-  var $slider = $('.home-slider'),
+  var $slider = $('.home .banner'),
       prevArrow = $slider.parents('.slider').find('.slider-button_prev'),
       nextArrow = $slider.parents('.slider').find('.slider-button_next');
 
@@ -133,5 +121,35 @@ function home() {
     slidesToScroll: 1,
     prevArrow: prevArrow,
     nextArrow: nextArrow
+  });
+}
+//reviews
+function reviews() {
+  var $slider = $('.reviews__slider'),
+      prevArrow = $slider.parents('.slider').find('.slider-button_prev'),
+      nextArrow = $slider.parents('.slider').find('.slider-button_next');
+
+  $slider.on('init reInit afterChange', function(){
+    lazy();
+  })
+
+  $slider.slick({
+    infinite: true,
+    dots: false,
+    arrows: true,
+    speed: 400,
+    slidesToShow: 2,
+    slidesToScroll: 2,
+    prevArrow: prevArrow,
+    nextArrow: nextArrow,
+    responsive: [
+      {
+        breakpoint: 576,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
   });
 }
