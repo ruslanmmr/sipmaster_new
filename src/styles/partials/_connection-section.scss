@@ -1,0 +1,61 @@
+.connection-section {
+  border-top: 1px solid #e6e6e6;
+  padding: 45px 0 0 0;
+  margin-bottom: 45px;
+  &__title {
+    padding: 15px 0;
+    .title {
+      padding-bottom: 0.7em;
+      position: relative;
+      display: inline-block;
+      margin-right: 30px;
+      &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        height: 3px;
+        border-radius: 3px;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        background-color: #008021;
+      }
+    }
+  }
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .number-form {
+    padding: 15px 0;
+  }
+  &__label {
+    display: block;
+    margin-bottom: 25px;
+    font-size: 18px;
+  }
+}
+
+.number-form {
+  max-width: 650px;
+  width: 100%;
+  &__label {
+    margin-bottom: 20px;
+    display: block;
+  }
+  &__content {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -10px;
+  }
+  &__group {
+    flex: 1 1 50%;
+    padding: 10px;
+    max-width: 420px;
+    .btn {
+      width: 100%;
+      padding: 22px;
+    }
+  }
+}

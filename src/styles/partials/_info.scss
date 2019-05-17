@@ -1,0 +1,151 @@
+.info {
+  margin: 100px 0;
+  &__description {
+    margin-bottom: 100px;
+  }
+  &__advantages-head {
+    padding-bottom: 60px;
+    position: relative;
+    * {
+      position: relative;
+      z-index: 2;
+    }
+  }
+  &__advantages-background {
+    position: absolute;
+    width: calc(100% + 30px);
+    left: -15px;
+    bottom: 0;
+    height: calc(100% + 50px);
+    background-position: 95% 100%;
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    z-index: 1;
+  }
+  &__advantages {
+    margin-bottom: 80px;
+    .benefits {
+      margin: 0 0 60px 0;
+    }
+  }
+}
+
+.price {
+  &__title {
+    text-align: center;
+    padding: 15px 0;
+    background-color: #e6e6e6;
+  }
+}
+
+.table-price {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 45px;
+  &__head {
+    font-size: 22px;
+    margin-bottom: 15px;
+    th {
+      padding: 35px 15px;
+      font-weight: 400;
+      text-align: left;
+      width: 33.33%;
+      &:not(:first-child) {
+        text-align: center;
+        position: relative;
+        &:after {
+          content: '';
+          display: block;
+          width: 100%;
+          max-width: 150px;
+          height: 3px;
+          border-radius: 3px;
+          background-color: #008021;
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+      }
+    }
+  }
+  &__block {
+    font-size: 18px;
+    &:last-child {
+      td {
+        border-bottom: 1px solid #e6e6e6;
+      }
+    }
+    td {
+      padding: 25px 15px;
+      border-top: 1px solid #e6e6e6;
+      position: relative;
+      &:not(:first-child) {
+        text-align: center;
+        font-weight: 700;
+      }
+    }
+  }
+}
+
+@media all and(max-width: 992px) {
+  .info__advantages-background {
+    background-position: calc(100% + 100px) 100%;
+  }
+  .table-price__head {
+    font-size: 18px;
+  }
+  .table-price__block {
+    font-size: 16px;
+  }
+}
+@media all and(max-width: 768px) {
+  .info__advantages-background {
+    opacity: 0.5;
+    background-size: 400px auto;
+  }
+  .table-price__head {
+    display: none;
+  }
+  .table-price__block {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border-width: 0 1px 1px 1px;
+    border-style: solid;
+    border-color: #e6e6e6;
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+    td {
+      display: flex;
+      padding: 0;
+      &:before {
+        content: attr(data-label);
+        width: 50%;
+        text-align: left;
+        padding: 15px;
+        border-right: 1px solid #e6e6e6;
+        display: flex;
+        align-items: center;
+        font-weight: 400;
+      }
+      span {
+        width: 50%;
+        padding-left: 30px;
+        text-align: center;
+        padding: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+  .info {
+    margin: 60px 0;
+  }
+  .info__description,
+  .info__advantages {
+    margin-bottom: 60px;
+  }
+}

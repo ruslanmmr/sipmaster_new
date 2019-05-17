@@ -1,0 +1,16 @@
+section.connection-section
+  .container
+    .connection-section__container
+      .connection-section__title  
+        h3.title Подключение<br> виртуального номера
+      form(action="").number-form
+        span.number-form__label Оставьте свой номер телефона, менеджер Вам перезвонит
+        .number-form__content
+          .number-form__group
+            .phone-input
+              span +7
+              input(type="text" placeholder="Ваш номер телефона" required).input.input_phone
+          .number-form__group
+            button.btn.btn_style2
+              i.fas.fa-cart-plus
+              | Заказать услугу

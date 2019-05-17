@@ -14,7 +14,49 @@ body {
 p {
   margin: 0;
   &:not(:last-child) {
-    margin-bottom: 1em;
+    margin-bottom: 25px;
+  }
+}
+h1, h2, h3, h4, h5 {
+  font-weight: 400;
+  margin:0 0 25px 0;
+  line-height: 1.15;
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+h1, h2 {
+  font-size: 40px;
+}
+h3 {
+  font-size: 36px;
+}
+h4 {
+  font-size: 32px;
+}
+h5 {
+  font-size: 28px;
+}
+.footnote {
+  padding-left: 25px;
+  position: relative;
+  margin-left: 5px;
+  &:before {
+    content: '';
+    display: block;
+    width: 1px;
+    height: 95%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: #c5c5c5;
+  }
+  &_green {
+    &:before {
+      width: 3px;
+      background-color: #008021;
+      border-radius: 3px;
+    }
   }
 }
 .wrapper {
@@ -93,8 +135,12 @@ p {
   transition: 0.3s;
   letter-spacing: 1px;
   white-space: nowrap;
+  i {
+    margin-right: 20px;
+  }
   &:hover {
     background-color: #94b4d5;
+    color: #000;
   }
   &_style2 {
     background-color: #029127 !important;
@@ -113,6 +159,12 @@ p {
     &:hover {
       background-color: #008021;
       color: #fff;
+    }
+  }
+  &_style4 {
+    color: #728291;
+    &:hover {
+      color: #000;
     }
   }
 }
@@ -139,11 +191,39 @@ p {
   background-color: #d7d7d7;
   border-radius: 62px;
   outline: none;
+  max-width: 400px;
 }
-.title {
-  margin: 0;
-  font-size: 32px;
-  font-weight: normal;
+.phone-input {
+  position: relative;
+  .input {
+    padding: 0 20px 0 75px;
+    width: 100%;
+    font-size: 18px;
+    position: relative;
+    z-index: 1;
+    &::placeholder {
+      color: rgba(0, 0, 0, 0.6);
+      font-size: 14px;
+      text-align: center;
+    }
+    &:focus {
+      &::placeholder {
+        opacity: 0;
+      }
+    }
+  }
+    span {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 2;
+      height: 100%;
+      width: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-right: 1px solid #e6e6e6;
+    }
 }
 .sub-title {
   color: #636363;
@@ -192,12 +272,41 @@ p {
     height: 60px;
   }
 }
+@media all and(max-width: 768px) {
+  h1, h2 {
+    font-size: 38px;
+  }
+  h3 {
+    font-size: 34px;
+  }
+  h4 {
+    font-size: 30px;
+  }
+  h5 {
+    font-size: 26px;
+  }
+}
 @media all and(max-width: 576px) {
   .btn_style3 i {
     margin-left: 20px;
   }
-  .title {
-    font-size: 28px;
+  .footnote {
+    padding-left: 20px;
+  }
+  h1 {
+    font-size: 34px;
+  }
+  h2 {
+    font-size: 30px;
+  }
+  h3 {
+    font-size: 26px;
+  }
+  h4 {
+    font-size: 24px;
+  }
+  h5 {
+    font-size: 22px;
   }
 }
 
@@ -208,4 +317,7 @@ p {
 @import "./partials/solutions";
 @import "./partials/advantages";
 @import "./partials/reviews";
+@import "./partials/info";
+@import "./partials/category-head";
+@import "./partials/connection-section";
 @import "./partials/footer";

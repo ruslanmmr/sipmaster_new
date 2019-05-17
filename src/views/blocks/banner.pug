@@ -7,10 +7,13 @@ section.solutions
           .category-item Интернет-телефония
           h2.banner-slide__title Комплексные решения
           p.banner-slide__text Помощь малому и среднему бизнесу по внедрению<br> современной корпоративной телефонии: городской номер,<br> автоответчик, голосовое меню, записи вызовов...
-        form.banner-slide__form
-          .banner-slide__form-group
-            .banner-slide__input
-              span +7
-              input(type="text" placeholder="Ваш номер телефона" required).input.input_phone
-          .banner-slide__form-group
-            button(type='submit').btn.btn_style2 Получить консультацию
+        form(action="").number-form
+          .number-form__content
+            .number-form__group
+              .phone-input
+                span +7
+                input(type="text" placeholder="Ваш номер телефона" required).input.input_phone
+            .number-form__group
+              button.btn.btn_style2
+                i.fas.fa-cart-plus
+                | Получить консультацию

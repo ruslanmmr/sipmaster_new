@@ -1,4 +1,4 @@
-.opportunities {
+.opportunities-section {
   &__container {
     padding: 65px 0 100px 0;
   }
@@ -21,62 +21,52 @@
   }
 }
 
-.opportunities-block {
-  flex: 1 1 50%;
-  &:not(:last-child) {
-    padding-bottom: 55px;
-  }
-  &:nth-child(2) {
-    align-self: flex-start;
-  }
-  &:nth-child(3) {
-    align-items: flex-end;
-  }
+.benefits {
+  display: flex;
   &__container {
-    background-color: #fff;
-    padding: 0 60px;
-    border-radius: 10px;
+    margin-bottom: -40px;
   }
-  &__content {
-    position: relative;
-    padding: 30px 0;
-    &:before {
-      content: '\f067';
-      width: 35px;
-      height: 35px;
-      color: #fff;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: absolute;
-      font-size: 14px;
-      left: 0;
-      top: 0;
-      border-radius: 100%;
-      background-color: #008021;
-      transform: translateY(-50%);
-      font-family: 'Font Awesome 5 Free';
-      font-weight: 900;
+  &__block {
+    width: 50%;
+    padding-bottom: 40px;
+    &-container {
+      background-color: #fff;
+      padding: 0 60px;
+      border-radius: 10px;
+      height: 100%;
+    }
+    &-content {
+      position: relative;
+      padding: 30px 0 25px 0;
+      &:before {
+        content: '\f067';
+        width: 35px;
+        height: 35px;
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        font-size: 14px;
+        left: 0;
+        top: 0;
+        border-radius: 100%;
+        background-color: #008021;
+        transform: translateY(-50%);
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 900;
+      }
     }
   }
 }
 
-@media all and(max-width: 768px) {
-  .opportunities-block__container {
-    height: auto;
-  }
-  .opportunities__container {
-    padding: 65px 0;
-  }
-  .opportunities-block__container {
-    padding: 0 30px;
+@media all and(max-width: 992px) {
+  .benefits__block-container {
+    padding: 0 40px;
   }
 }
 @media all and(max-width: 576px) {
-  .opportunities__section {
-    flex: 1 1 100%;
-    &:not(:last-child) {
-      padding-bottom: 50px;
-    }
+  .benefits__block {
+    width: 100%;
   }
 }

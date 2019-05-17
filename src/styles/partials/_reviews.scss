@@ -9,6 +9,9 @@
     display: flex;
     align-items: center;
   }
+  &__title {
+    margin: 0;
+  }
   &__add-link {
     margin-left: 65px;
     margin-top: 7px;

@@ -1,6 +1,5 @@
 $(document).ready(function () {
   lazy();
-  autoBlockHeight();
   reviews();
   nav();
   home();
@@ -61,45 +60,6 @@ function lazy() {
     effect: 'fadeIn',
     effectTime: '300'
   });
-}
-//blocks
-function autoBlockHeight() {
-  var $block = $(".opportunities-block__container"),
-        $block1 = $(".opportunities-block__container_1"),
-        $block2 = $(".opportunities-block__container_2");
-
-  if(innerWidth > 576) {
-    resize();
-  }
-  $(window).resize(function () {
-    if(innerWidth > 576) {
-      resize();
-    } else {
-      $block.css('height', 'auto')
-    }
-  });
-
-  function resize() {
-    $block.css('height', 'auto');
-    var mh1 = 0,
-        mh2 = 0;
-
-    $block1.each(function () {
-      var h_block = parseInt($(this).height());
-      if(h_block > mh1) {
-        mh1 = h_block;
-      };
-    });
-    $block1.height(mh1);
-
-    $block2.each(function () {
-      var h_block = parseInt($(this).height());
-      if(h_block > mh2) {
-        mh2 = h_block;
-      };
-    });
-    $block2.height(mh2);
-  }
 }
 //clients
 function home() {
