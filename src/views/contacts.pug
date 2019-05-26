@@ -1,0 +1,55 @@
+doctype html
+html(lang="ru")
+  head
+    include blocks/head
+  body
+    .wrapper
+      .wrapper__container
+        include blocks/header
+        section.service-head
+          .container
+            .service-head__container.row
+              .service-head__section.col
+                .breadcrumbs
+                  ul.breadcrumbs__list
+                    li.breadcrumbs__item
+                      a(href="#").breadcrumbs__link Главная
+                    li.breadcrumbs__item Кнтакты
+                h3.service-head__title Контакты
+        main.main
+          .contacts
+            .container
+              .contacts__container
+                .contacts__content
+                  h5.contacts__title ООО «СипМастер»
+                  .contact-item
+                    i.fas.fa-map-marker-alt
+                    | Москва, Зеленоград, Савёлкинский проезд, дом 4
+                  a(href="#").contact-item.contact-item_number
+                    i.fas.fa-mobile-alt
+                    | +7 (495) 204-12-15
+                  a(href="#").contact-item
+                    i.fas.fa-envelope
+                    | info@sipmaster.ru
+                  span.contacts__item ИНН 773514893  |  КПП 773501001  |  ОГРН 1157746349243
+                .contacts__map
+                  #map
+          section.connection-section
+            .container
+              .connection-section__container
+                .connection-section__title  
+                  h3.title Остались вопросы?<br> Мы всегда рады помочь
+                form(action="").number-form
+                  span.number-form__label Оставьте свой номер телефона, менеджер Вам перезвонит
+                  .number-form__content
+                    .number-form__group
+                      .phone-input
+                        span +7
+                        input(type="text" placeholder="Ваш номер телефона" required).input.input_phone
+                    .number-form__group
+                      button.btn.btn_style2
+                        | Отправить
+        include blocks/footer
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js")
+    script(src="js/libs.min.js")                  
+    script(src="js/common.min.js")
