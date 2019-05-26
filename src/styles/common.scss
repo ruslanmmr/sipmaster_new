@@ -73,6 +73,21 @@ h5 {
 .main {
   position: relative;
   z-index: 1;
+  width: 100%;
+}
+.page {
+  position: relative;
+  z-index: 1;
+  margin-top: 50px;
+  .container {
+    display: flex;
+  }
+}
+.aside {
+  width: 290px;
+  //width: 100%;
+  flex-shrink: 0;
+  padding-right: 30px;
 }
 .slick-track {
   display: flex;
@@ -273,6 +288,14 @@ h5 {
   }
 }
 @media all and(max-width: 768px) {
+  .page .container {
+    flex-direction: column;
+  }
+  .aside {
+    order: 2;
+    width: 100%;
+    padding: 50px 0 0 0;
+  }
   h1, h2 {
     font-size: 38px;
   }
@@ -313,10 +336,12 @@ h5 {
 @import "./partials/header";
 @import "./partials/home";
 @import "./partials/banner";
+@import "./partials/articles";
 @import "./partials/opportunities";
 @import "./partials/solutions";
 @import "./partials/advantages";
 @import "./partials/reviews";
+@import "./partials/aside-items";
 @import "./partials/info";
 @import "./partials/category-head";
 @import "./partials/connection-section";

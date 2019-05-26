@@ -1,0 +1,75 @@
+doctype html
+html(lang="ru")
+  head
+    include blocks/head
+  body
+    .wrapper
+      .wrapper__container
+        include blocks/header
+        section.service-head
+          .container
+            .service-head__container.row
+              .service-head__section.col
+                .breadcrumbs
+                  ul.breadcrumbs__list
+                    li.breadcrumbs__item
+                      a(href="#").breadcrumbs__link Главная
+                    li.breadcrumbs__item Статьи
+                h3.service-head__title Полезная информация и статьи
+        .page
+          .container
+            aside.aside
+              .nav-list.nav-list_type1
+                ul
+                  li
+                    a(href="#") Частые вопросы
+                  li 
+                    a(href="#").active Полезная информация
+                  li
+                    a(href="#") Правила сервиса
+                  li
+                    a(href="#") Информация о настройке
+              .nav-list.nav-list_type2
+                span.nav-list__title Последние статьи
+                ul
+                  li
+                    a(href="#") Часто задаваемые вопросы
+                  li
+                    a(href="#") Правила набора номеров
+                  li
+                    a(href="#") Облачная АТС или свой сервер в офисе?
+                  li
+                    a(href="#") Выгода от посекундной тарификации
+              
+            main.main
+              .articles
+                include blocks/articles
+                +article('Облачная АТС или свой сервер в офисе?')
+                +article('Варианты подключения IP-телефонии')
+                +article('Выгода от посекундной тарификации')
+                +article('Приветствие на входящие звонки')
+              .pagination 
+                ul.pagination__list
+                  li.pagination__item
+                    a(href="#").pagination__link <i class="fas fa-angle-left"></i>
+                  li.pagination__item
+                    a(href="#").pagination__link.active 
+                      span 1
+                  li.pagination__item
+                    a(href="#").pagination__link
+                      span 2
+                  li.pagination__item
+                    a(href="#").pagination__link
+                      span 3
+                  li.pagination__item
+                    a(href="#").pagination__link
+                      span ...
+                  li.pagination__item
+                    a(href="#").pagination__link
+                      span 1234
+                  li.pagination__item
+                    a(href="#").pagination__link <i class="fas fa-angle-right"></i>
+        include blocks/footer
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js")
+    script(src="js/libs.min.js")                  
+    script(src="js/common.min.js")
