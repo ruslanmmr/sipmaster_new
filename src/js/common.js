@@ -77,6 +77,8 @@ function home() {
     arrows: true,
     fade: true,
     speed: 400,
+    autoplay: true,
+    autoplaySpeed: 5000,
     slidesToShow: 1,
     slidesToScroll: 1,
     prevArrow: prevArrow,

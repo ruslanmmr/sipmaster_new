@@ -1,0 +1,37 @@
+doctype html
+html(lang="ru")
+  head
+    include blocks/head
+  body
+    .wrapper
+      .wrapper__container
+        include blocks/header
+        main.main
+          section.error404-page
+            .container
+              .error404-page__container
+                h1.error404-page__title Ууупс... ! Ошибка!
+                h2.error404-page__sub-title Такой страницы не существует :(
+                span.error404-page__label 404
+                a(href="#").error404-page__back-link
+                  i.fas.fa-angle-left
+                  | Вернуться на главную
+          section.connection-section
+            .container
+              .connection-section__container
+                .connection-section__title  
+                  h3.title Остались вопросы?<br> Мы всегда рады помочь
+                form(action="").number-form
+                  span.number-form__label Оставьте свой номер телефона, менеджер Вам перезвонит
+                  .number-form__content
+                    .number-form__group
+                      .phone-input
+                        span +7
+                        input(type="text" placeholder="Ваш номер телефона" required).input.input_phone
+                    .number-form__group
+                      button.btn.btn_style2
+                        | Отправить
+        include blocks/footer
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js")
+    script(src="js/libs.min.js")                  
+    script(src="js/common.min.js")
